@@ -179,7 +179,7 @@ Decoder.prototype.buf = function (length) {
   return value;
 };
 Decoder.prototype.raw = function (length) {
-  var value = utf8Read(this.view, this.offset, length);
+  var value = TextDecoder('utf-8').decode(new Uint8Array(this.view.buffer, this.offset, length));
   this.offset += length;
   return value;
 };
