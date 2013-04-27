@@ -17,9 +17,11 @@
         var start = new Date();
         console.group(title);
         console.time(title);
+        console.profile(title);
         for (var i = 0; i < iterations; i++) {
             result = operation.call(context, obj);
         }
+        console.profileEnd();
         console.timeEnd(title);
         var total = new Date() - start;
         var op = total/iterations;
