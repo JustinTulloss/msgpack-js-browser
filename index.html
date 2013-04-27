@@ -33,10 +33,8 @@
     <script>
 
 function Buffer(string) {
-    var buffer = new ArrayBuffer(msgpack.utf8ByteCount(string));
-    var view = new DataView(buffer);
-    msgpack.utf8Write(view, 0, string);
-    return buffer;
+    var view = TextEncoder('utf-8').encode(string);
+    return view.buffer;
 }
 
 var tests = [

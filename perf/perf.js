@@ -1,6 +1,6 @@
 (function() {
     "use strict";
-    var iterations = 100;
+    var iterations = 10;
     function fetch(path, responseType, callback) {
         var req = new XMLHttpRequest();
         req.responseType = responseType || 'text';
